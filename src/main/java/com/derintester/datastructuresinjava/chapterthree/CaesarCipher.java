@@ -29,7 +29,7 @@ public class CaesarCipher {
 		for(int index = 0; index < transformedMessage.length; index++) {
 			char uppercaseChar = Character.toTitleCase(transformedMessage[index]);
 			if(Character.isUpperCase(uppercaseChar)) {
-				int newIndex = Character.toTitleCase(transformedMessage[index]) - 'A';
+				int newIndex = uppercaseChar - 'A';
 				transformedMessage[index] = code[newIndex];
 			}
 		}
@@ -38,7 +38,7 @@ public class CaesarCipher {
 	}
 
 	public static void main(String[] args) {
-		CaesarCipher cipher = new CaesarCipher(100);
+		CaesarCipher cipher = new CaesarCipher(125);
 		logger.debug("Encryption code is " + new String(cipher.encoder));
 		logger.debug("Decryption code is " + new String(cipher.decoder));
 		String message = "The eagle is in play; meet at joe's.";
